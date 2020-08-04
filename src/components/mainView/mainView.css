@@ -1,0 +1,9 @@
+.listGroupPos {
+    position: relative;
+    background-color: rgba(42, 44, 47, 1.0);
+    top: 4.5em;
+    width:53%;
+    display: block;
+    margin: auto;
+    left:22.5%;
+}

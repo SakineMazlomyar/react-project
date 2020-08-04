@@ -1,0 +1,63 @@
+.headerContainer {
+    position: relative;
+    background-color:rgba(42, 44, 47, 1.0);
+    top: 4.5em;
+}
+
+.branContainer {
+    width:30%
+}
+
+.formSeachWidth {
+    width:50%
+}
+.circleSize {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: #ED1637;
+    margin-right: 0.3em;
+}
+
+.brandTitle {
+
+    
+   
+    /* can be shortened to */
+    font-family: Georgia, serif, sans-serif;;
+    font-weight: bolder;
+    font-variant-caps: titling-caps;
+    text-decoration: line-through solid rgba(42, 44, 47, 1.0);
+    color: #B0B3B5;
+    font-size: 2em;;
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+
+
+.formContainer {
+  
+    color:white;
+    background-color:rgba(42, 44, 47, 1.0);
+    border: solid #000;
+    border-width: 2px;
+    border-color: #333437;
+    padding: 6px;
+    box-shadow: 3px 3px  #000; 
+  }
+
+  .input {
+    color: white;
+    font-weight: bold;
+    background-color:rgba(42, 44, 47, 1.0);
+    border-width:0;
+  
+  }
+  
+  .searchIcon {
+ 
+    font-size: 1.3em;
+    color: white;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,9 @@
+.footerContainer {
+   /*  position: fixed;
+    left: 0;
+    bottom: 0; */
+    height:3em;
+    background-color: #141517;
+    border: solid #333437;
+    border-width: 2px;
+}

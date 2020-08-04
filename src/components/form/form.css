@@ -1,0 +1,30 @@
+
+.loginLogOut{
+    color:#1b74af;
+    padding: 0.1em;
+  
+}
+
+.loginLogOutIconSize {
+    font-size: 1.6em;
+}
+
+
+.form-content
+{
+    position: relative;
+    top:3em;
+    width:50%;
+    display: block;
+ 
+    border: 1px solid #ced4da;
+    margin: auto;
+}
+.form-control{
+    border-radius:1.5rem;
+}
+.btnSubmit
+{
+    width: 45%;
+    border-radius:1.5rem;
+}
