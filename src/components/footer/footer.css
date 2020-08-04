@@ -1,9 +1,27 @@
 .footerContainer {
-   /*  position: fixed;
-    left: 0;
-    bottom: 0; */
+    top:10em;
     height:3em;
+ 
+}
+
+.termsPrivecyContainer {
+    position: relative;
+    top:8em;
+  
+}
+
+
+.border {
+    position: relative;
     background-color: #141517;
     border: solid #333437;
     border-width: 2px;
+}
+
+.footerMainContainer {
+    position: relative;
+}
+
+.iconSize {
+    font-size: 1.4;
 }
