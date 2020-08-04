@@ -15,7 +15,7 @@ export default class DetailView extends React.Component<Props,{}>{
 
     render(){
         return(
-          <div className="row listGroupItem p-2 "> 
+          <div className="row listGroupItem m-1 "> 
             <div className="col-md-6 bg-dark">
                 <img className="float-left" src={this.props.logo_url} alt={this.props.headline}/>
 
@@ -36,7 +36,7 @@ export default class DetailView extends React.Component<Props,{}>{
                 </div>
                 <div>
                 <FontAwesomeIcon icon={faHome} />
-                <span className="font-weight-bold">City {this.props.city}</span>
+                <span className="font-weight-bold">{this.props.city}</span>
                 <span className="font-weight-bold">{this.props.country}</span>
                 </div>
              

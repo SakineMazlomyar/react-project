@@ -8,7 +8,8 @@ import FormSelect from '../form/formSelect';
 interface Props {
     data:any,
     cities:string[],
-    selectChoosenCity:(city:string)=>void
+    selectChoosenCity:(city:string)=>void,
+    grouped:any
 }
 
 interface State {
@@ -26,15 +27,16 @@ export default class MainView extends React.Component<Props, State>{
     }
 
     renderJobs = ()=>{
-        if(this.props.data && this.props.data.length > 0) {
+        let sortedOrOrigin = this.props.grouped && this.props.grouped.length>0?this.props.grouped:this.props.data;
+        if(sortedOrOrigin && sortedOrOrigin.length > 0) {
 
-            return this.props.data.map((item:any)=>{
-    
+            return  sortedOrOrigin.map((item:any)=>{
+               
                 return <DetailView 
                 logo_url={item.logo_url} 
                 description={item.description.text} 
                 headline={item.occupation.label}
-                city={item.workplace_address.city}
+                city={item.workplace_address.municipality}
                 country={item.workplace_address.country}
                 />
         
@@ -60,14 +62,10 @@ export default class MainView extends React.Component<Props, State>{
       
 
     handleChange = (event:React.ChangeEvent<HTMLSelectElement>) => {
-        this.setState({city: event.target.value});
+        this.setState({city: event.target.value},()=>{ this.props.selectChoosenCity(this.state.city)});
       }
     
-    handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        console.log(this.state.city)
-        this.props.selectChoosenCity(this.state.city)
-      }
+  
 
 
     render(){
@@ -94,7 +92,6 @@ export default class MainView extends React.Component<Props, State>{
                 
                   <p className="text-secondary text-center">SORT RESULTS</p>
                     <FormSelect options={this.props.cities} 
-                    onSubmit={this.handleSubmit} 
                     onChange={this.handleChange} 
                     option={this.state.city}
                    

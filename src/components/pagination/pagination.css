@@ -18,8 +18,14 @@
   .pageIcon{
     font-size: 1.3em;
   }
-
   .pageItems {
     list-style-type: none;
-    color:red
+  }
+
+  .pageLink {
+    border:none;
+    background-color: rgba(42, 44, 47, 1.0);
+  }
+  .pageItem{
+    background-color: rgba(42, 44, 47, 1.0);
   }

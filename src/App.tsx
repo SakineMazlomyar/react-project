@@ -32,9 +32,10 @@ interface State{
     currentPage:number,
     suggestionParPage:number,
     cities:string[],
-    choosenCity:string
+    choosenCity:string,
+    sorted: any
 
-}
+}    
 interface Props {
     register:(user:NewUser)=>void,
     login:(user:UserRegisterd)=>{type:string, payload:{email:string, username:string}},
@@ -55,7 +56,8 @@ class App extends React.Component<Props,State>{
             currentPage:1,
             suggestionParPage:3,
             cities:[],
-            choosenCity:''
+            choosenCity:'',
+            sorted:[]
 
         }
 
@@ -139,13 +141,14 @@ class App extends React.Component<Props,State>{
 
         response.then((suggestions:any)=>{
             let c:string[] = []
-            c.unshift('Alla Cities')
+            c.unshift('All Cities')
             suggestions.payload.map((obj:any)=> {
-                if(obj.workplace_address.city !== "" &&obj.workplace_address.city !== null ){
-                    c.push(obj.workplace_address.city)
+                if(obj.workplace_address.municipality !== "" &&obj.workplace_address.municipality !== null ){
+                    c.push(obj.workplace_address.municipality)
                 }
             })
             
+            console.log(suggestions, 'hhh')
             this.setState({suggestions:suggestions.payload, cities:c},()=>{
 
                 let searches:any =  getValueFromLocalstoreage('searches');
@@ -161,15 +164,16 @@ class App extends React.Component<Props,State>{
     });
     }
 
-    componentDidMount(){
+    componentDidMount(){ this.getDefaultData()}
 
+    getDefaultData = () =>{
         this.props.getDefaultData().then((data:any)=>{
             let c:string[] = []
-            c.unshift('Alla Cities')
+            c.unshift('All Cities')
             data.payload.map((obj:any)=> {
 
-                if(obj.workplace_address.city !== "" &&obj.workplace_address.city !== null ){
-                    c.push(obj.workplace_address.city)
+                if(obj.workplace_address.municipality !== "" &&obj.workplace_address.municipality !== null ){
+                    c.push(obj.workplace_address.municipality)
                 }
 
             })
@@ -180,35 +184,35 @@ class App extends React.Component<Props,State>{
         
         );
     }
-
     handlePaginate = (num: number)=>{
-
+        console.log(num)
         this.setState({currentPage:num}) }
 
-    getCity = (city:string)=> { 
-       
-        this.setState({choosenCity:city},()=>{this.sortSuggestions()})}
+    getCity = (city:string)=> { this.setState({choosenCity:city},()=>{this.sortSuggestions()})}
 
-    sortSuggestions = ()=>{
+    sortSuggestions = () => {
         if(this.state.suggestions && this.state.suggestions.length > 0 ) {
+            let origin = this.state.suggestions
             let sorted:any = []
+         
             this.state.suggestions.map((item:any) => {
-                if(item.workplace_address.city === this.state.choosenCity){
+                
+                
+                if(item.workplace_address.municipality === this.state.choosenCity){
+                    console.log(item.workplace_address.municipality , this.state.choosenCity)
                     sorted.push(item)
                 }
             });
-            if(sorted.length > 0 ) {
-
-                this.setState({suggestions:sorted.length ===0?this.state.suggestions:sorted},()=>{console.log(this.state.suggestions)})
-            }
+            this.setState({sorted:sorted})
         }
     }
 
 
     render(){
+        let finalData = this.state.sorted.length>0?this.state.sorted:this.state.suggestions;
         let indexOfLastSuggest = this.state.currentPage * this.state.suggestionParPage;
         let indexOfFirstSuggest = indexOfLastSuggest - this.state.suggestionParPage;
-        let currentSuggestions = this.state.suggestions.slice(indexOfFirstSuggest, indexOfLastSuggest)
+        let currentSuggestions = finalData.slice(indexOfFirstSuggest, indexOfLastSuggest)
       
      
          
@@ -222,13 +226,20 @@ class App extends React.Component<Props,State>{
                 {this.renderSingInSignUp()}
                 <Header  getSeachText={this.getSeachText}/>
                 <MiniHeader />
-                <MainView data={currentSuggestions} cities={this.state.cities.filter((c,i,self) => {return self.indexOf(c)=== i})} selectChoosenCity={this.getCity}/>
+                <MainView 
+                data={currentSuggestions} 
+                cities={this.state.cities.filter((c,i,self) => 
+                {return self.indexOf(c)=== i})} selectChoosenCity={this.getCity}
+                grouped={this.state.sorted}
+                />
                 <Pagination 
                 suggestionsParPage={this.state.suggestionParPage}
-                totalSuggesttions = {this.state.suggestions}
+                totalSuggesttions = {finalData}
                 paginate = {this.handlePaginate}
+            
                 currentPage = {this.state.currentPage}
                 />
+                
                 <Footer/>
                 
             </div>
