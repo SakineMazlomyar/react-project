@@ -25,7 +25,7 @@ export default class MainView extends React.Component<Props, State>{
 
     }
 
-    renderData = ()=>{
+    renderJobs = ()=>{
         if(this.props.data && this.props.data.length > 0) {
 
             return this.props.data.map((item:any)=>{
@@ -47,20 +47,17 @@ export default class MainView extends React.Component<Props, State>{
        let searches = getValueFromLocalstoreage('searches');
       
        if(searches && searches.length > 0){
-           return searches.map((search:string, i:number)=>{
-                return <li className="text-danger" key={i}><FontAwesomeIcon icon={faHashtag} className="text-danger"/>{search}</li>
+           return searches.filter((t:string, i:number,self:string[])=>{
+                return self.indexOf(t) === i;
+           }).map((search:string, i:number)=>{
+           
+                return <li className="text-danger m-1" key={i}><FontAwesomeIcon icon={faHashtag} className="text-danger"/>{ search}</li>
            })
        }
     }
 
 
-    renderCitiesForSort = () => {
-        if(this.props.cities && this.props.cities.length > 0) {
-            return this.props.cities.map((city:string) => {
-                return <option value={city} key={city}>{city}</option>
-            })
-        }
-    }
+      
 
     handleChange = (event:React.ChangeEvent<HTMLSelectElement>) => {
         this.setState({city: event.target.value});
@@ -74,33 +71,36 @@ export default class MainView extends React.Component<Props, State>{
 
 
     render(){
-       
+                
         return(
-        <div className="container d-flex flex-md-row">
-             <div>
-                <h6 className="text-secondary">SEARCHED RELATED</h6>
-                <ul>
-                    {this.renderSearchRelatedTerms()}
-                </ul>
-
-            </div>
-            <div className="list-group "> 
-                    {this.renderData()}
+        <div className="d-flex mainContainer container-fluid justify-content-center p-4 flex-sm-column flex-md-row">
+            
+                <div className="searchRelatedContainer">
                     
-            </div>
-            <div>
-                <h6 className="text-secondary">SEARCHED RELATED</h6>
-            </div>
+                  <p className="text-secondary text-center">SEARCHED RELATED</p>
+                    <ul className="itemContainer d-flex flex-column justify-content-center align-items-center" >
+                        {this.renderSearchRelatedTerms()}
+                    </ul>
 
-            <div>
-            <FormSelect options={this.props.cities} 
-            onSubmit={this.handleSubmit} 
-            onChange={this.handleChange} 
-            option={this.state.city}
-            label ={'SORT RESULTS'}
-            />
-            <h1>{this.state.city}</h1>
-            </div>
+                </div>
+                <div className="listGroupContainer" > 
+                
+                 {  this.renderJobs()}
+                             
+                </div>
+            
+       
+                <div className="sortContainer ">
+                
+                  <p className="text-secondary text-center">SORT RESULTS</p>
+                    <FormSelect options={this.props.cities} 
+                    onSubmit={this.handleSubmit} 
+                    onChange={this.handleChange} 
+                    option={this.state.city}
+                   
+                    />
+                </div>
+            
         </div>
         )
     }

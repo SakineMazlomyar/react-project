@@ -1,9 +1,24 @@
-.listGroupPos {
-    position: relative;
+.listGroupContainer {
+    width:58%;
     background-color: rgba(42, 44, 47, 1.0);
-    top: 4.5em;
-    width:53%;
-    display: block;
-    margin: auto;
-    left:22.5%;
+    
+}
+
+.mainContainer {
+    position: relative;
+    top: 5em
+}
+
+.searchRelatedContainer {
+    width:20%;
+    background-color: rgba(42, 44, 47, 1.0);
+}
+.itemContainer{
+    list-style-type: none;
+    
+}
+
+.sortContainer {
+    background-color:  rgba(42, 44, 47, 1.0);
+    width:20%;
 }
