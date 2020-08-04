@@ -15,7 +15,7 @@ export interface NewUser {
 let users:any = []
 export function register(user:NewUser) {
     return function(dispatch: any) {
-        console.log(user)
+      
         users.push(user)
         
 
@@ -31,7 +31,7 @@ export function login(user:UserRegisterd) {
     return function(dispatch: any) {
      
         for(let participate of users){
-            if(user.email === participate.email){
+            if(participate.email === user.email &&  participate.password ===  user.password ){
                 return dispatch({
                     type:Types.LOGIN,
                     payload:{username:participate.username, email:participate.email}
@@ -39,10 +39,7 @@ export function login(user:UserRegisterd) {
             }
         }
 
-        return dispatch({
-            type:Types.LOGIN,
-            payload:{}
-        })
+        return false
         
 
      

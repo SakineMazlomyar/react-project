@@ -61,15 +61,13 @@ export default class MainView extends React.Component<Props, State>{
 
       
 
-    handleChange = (event:React.ChangeEvent<HTMLSelectElement>) => {
-        this.setState({city: event.target.value},()=>{ this.props.selectChoosenCity(this.state.city)});
+    handleChange = (event:any) => {
+        this.setState({city:event},()=>{ this.props.selectChoosenCity(this.state.city)});
       }
     
-  
-
 
     render(){
-                
+        
         return(
         <div className="d-flex mainContainer container-fluid justify-content-center p-4 flex-sm-column flex-md-row">
             
@@ -90,7 +88,7 @@ export default class MainView extends React.Component<Props, State>{
        
                 <div className="sortContainer ">
                 
-                  <p className="text-secondary text-center">SORT RESULTS</p>
+                  <p className="text-secondary text-left">SORT RESULTS</p>
                     <FormSelect options={this.props.cities} 
                     onChange={this.handleChange} 
                     option={this.state.city}

@@ -6,7 +6,7 @@ import './form.css';
 interface Props {
     options:Array<string>,
    
-    onChange:(event: React.ChangeEvent<HTMLSelectElement>)=>void,
+    onChange:(event:any)=>void,
     option:string
   
    
@@ -16,18 +16,35 @@ export default class FormSelect extends React.Component<Props, {}>{
     
     rendeOptions = () => {   
         return this.props.options.map((option:string)=>{
-            return <option className="bg-dark" value={option}>{option}</option>
+            return <button className="bg-dark dropdown-item text-light"   onClick={()=> this.props.onChange(option)}>{option}</button>
         })
     }
 
-
+    /* 
+    <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+    
+    
+    */
     render() {
         return (
-            <form >
-              <select value={this.props.option} onChange={this.props.onChange}>
+            <div  className="dropdown">
+               <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Location
+            </button>
+            <div className="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
                 {this.rendeOptions()}
-              </select>
-          </form>
+            </div>
+              
+          </div>
          
         )
     }

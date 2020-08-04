@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHashtag, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHashtag, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faTwitterSquare,faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 import './navbar.css';
@@ -8,7 +8,8 @@ import './navbar.css';
 interface Props {
     signInSignOut:()=>void,
     signIn: boolean,
-    username:string
+    username:string,
+    handleLogOutLogin:()=>void
 }
 
 interface State {
@@ -31,13 +32,26 @@ export default class Navbar extends React.Component<Props, State>{
                 </button>
                 <div className="collapse navbar-collapse" id="nav-menu">
                     <ul className="navbar-nav ml-auto">
-                    <li className="nav-item">{this.props.username !== ''?`Welcome ${this.props.username}`:''}</li>
+                    <li className="nav-item">
+                        {this.props.username && this.props.username !== '' ?
+                        <div className="d-flex flex-row justifiy-content-center ">
+                            <FontAwesomeIcon icon={faSignOutAlt}   onClick={this.props.handleLogOutLogin} className="loginLogOut loginLogOutIconSize "/>
+                            <span>{`Welcome ${this.props.username}`}</span>
+                        </div>:''}
+                        </li>
                         <li className="nav-item"> <a href="/" className="nav-link ">  <FontAwesomeIcon icon={faInstagram} className="iconSize"/> </a> </li>
                         <li className="nav-item"> <a href="/" className="nav-link">    <FontAwesomeIcon icon={faTwitterSquare}  className="iconSize"/> </a> </li>
                         <li className="nav-item logInIcon"> 
-                        {this.props.signIn?<span className="loginLogOut" >close</span>:<span className="loginLogOut">Login</span>}
-                        <FontAwesomeIcon icon={faSignInAlt}   onClick={this.props.signInSignOut} className="loginLogOut loginLogOutIconSize "/></li>
-    
+                        {!this.props.username && this.props.username == ''?
+
+                            this.props.signIn?<span className="loginLogOut" >close</span>:
+                        <div>
+                            <span className="loginLogOut">Login</span>
+                            <FontAwesomeIcon icon={faSignInAlt}   onClick={this.props.signInSignOut} className="loginLogOut loginLogOutIconSize "/>
+                        </div>
+                        :''
+                        }    
+                        </li>
                     </ul>
                 </div>
              

@@ -209,6 +209,7 @@ class App extends React.Component<Props,State>{
 
 
     render(){
+        console.log(this.state.suggestions)
         let finalData = this.state.sorted.length>0?this.state.sorted:this.state.suggestions;
         let indexOfLastSuggest = this.state.currentPage * this.state.suggestionParPage;
         let indexOfFirstSuggest = indexOfLastSuggest - this.state.suggestionParPage;
