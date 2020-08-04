@@ -89,16 +89,18 @@ class App extends React.Component<Props,State>{
     handleSubmitLogin = (event: React.FormEvent<HTMLFormElement>) => {
         let userLogedIn = this.props.login({email:this.state.email, password:this.state.password});
         console.log(userLogedIn)
-        userLogedIn && userLogedIn.payload?
-        this.setState({
-            loggedInUser:{username:userLogedIn.payload.username,
-           email:userLogedIn.payload.email,
-            isLoggedIn:true
 
-            }}):alert('Try Later');
-            
+        userLogedIn && userLogedIn.payload?
+        this.setState({ 
+            loggedInUser:{username:userLogedIn.payload.username, email:userLogedIn.payload.email,  isLoggedIn:true },
+            signIn:false
+        }):alert('Try Later');
         event.preventDefault();
         
+    }
+
+    handleLogOutLogin = () => {
+        this.setState({loggedInUser:{username:'', email:'', isLoggedIn:false}})
     }
     handleSubmitRegister = (event: React.FormEvent<HTMLFormElement>) => {
      
@@ -109,26 +111,24 @@ class App extends React.Component<Props,State>{
     }
 
 
-    handleSingInSignUp = () => {
+    toggleTitleSignInSignUp = () => {
         this.setState({signInForm:!this.state.signInForm})
     }
     renderSingInSignUp = () => {
         if(this.state.signIn){
             return <div className="form-content p-2">
-                    
+            <button  type="button" className="btn btn-primary mb-4" onClick={this.toggleTitleSignInSignUp}> <span>{!this.state.signInForm ?"Sign In":"Sign Up"}</span></button>
                 { this.state.signInForm? 
                     <Form fields={[
                         { label:"Username", type:"text", value:"", name:"username", placeholder:"username"},
                         {label:"Email", type:"email", value:"",  name:"email", placeholder:"email"},
                         {label:"Password", type:"password", name:"password", value:"",  placeholder:"password"}
-                ]} onSubmit={this.handleSubmitRegister} onChange={this.onChange} titleSubmit={"Sign Up"} 
-                toggle={this.handleSingInSignUp}/>:
+                ]} onSubmit={this.handleSubmitRegister} onChange={this.onChange}/>:
                     <Form fields={[
     
                         {label:"Email", type:"email", name:"email", value:"",  placeholder:"email"},
                         {label:"Password", type:"password", name:"password", value:"",  placeholder:"password"}
-                ]} onSubmit={this.handleSubmitLogin} onChange={this.onChange} titleSubmit={"Sign In"}  
-                toggle={this.handleSingInSignUp}/>}
+                ]} onSubmit={this.handleSubmitLogin} onChange={this.onChange}/>}
                     
                 </div>
         }
@@ -145,7 +145,7 @@ class App extends React.Component<Props,State>{
                     c.push(obj.workplace_address.city)
                 }
             })
-         
+            
             this.setState({suggestions:suggestions.payload, cities:c},()=>{
 
                 let searches:any =  getValueFromLocalstoreage('searches');
@@ -181,7 +181,9 @@ class App extends React.Component<Props,State>{
         );
     }
 
-    handlePaginate = (num: number)=>{ this.setState({currentPage:num}) }
+    handlePaginate = (num: number)=>{
+
+        this.setState({currentPage:num}) }
 
     getCity = (city:string)=> { 
        
@@ -207,20 +209,25 @@ class App extends React.Component<Props,State>{
         let indexOfLastSuggest = this.state.currentPage * this.state.suggestionParPage;
         let indexOfFirstSuggest = indexOfLastSuggest - this.state.suggestionParPage;
         let currentSuggestions = this.state.suggestions.slice(indexOfFirstSuggest, indexOfLastSuggest)
-        
-        
       
+     
+         
         return( 
-            <div>
-               <Navbar signInSignOut={this.signInSignOut} signIn={this.state.signIn} username={this.state.loggedInUser.isLoggedIn?this.state.loggedInUser.username:''}/>  
+            <div>    
+               <Navbar signInSignOut={this.signInSignOut} 
+                        signIn={this.state.signIn} 
+                        username={this.state.loggedInUser.isLoggedIn?this.state.loggedInUser.username:''}
+                        handleLogOutLogin={this.handleLogOutLogin}
+                        />  
                 {this.renderSingInSignUp()}
                 <Header  getSeachText={this.getSeachText}/>
                 <MiniHeader />
-                <MainView data={currentSuggestions} cities={this.state.cities} selectChoosenCity={this.getCity}/>
+                <MainView data={currentSuggestions} cities={this.state.cities.filter((c,i,self) => {return self.indexOf(c)=== i})} selectChoosenCity={this.getCity}/>
                 <Pagination 
                 suggestionsParPage={this.state.suggestionParPage}
                 totalSuggesttions = {this.state.suggestions}
                 paginate = {this.handlePaginate}
+                currentPage = {this.state.currentPage}
                 />
                 <Footer/>
                 

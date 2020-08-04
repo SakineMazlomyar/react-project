@@ -8,3 +8,18 @@
     padding: 8px 16px;
     text-decoration: none;
   }
+
+  .containerPaginate {
+    width:40%;
+    position: relative;
+    top:5em;
+  }
+
+  .pageIcon{
+    font-size: 1.3em;
+  }
+
+  .pageItems {
+    list-style-type: none;
+    color:red
+  }
