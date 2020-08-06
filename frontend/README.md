@@ -16,8 +16,13 @@ cd frontend
 
 ![result.png](result.png)
 
-### backend is only for serving the built app for production
-the url http://159.89.94.168:5000/
+### backend is only for serving the built app in production
+to test backend
+### npm install 
+node index.js
+localhost:5000
+
+### the url for live  http://159.89.94.168:5000/
 
 
 
