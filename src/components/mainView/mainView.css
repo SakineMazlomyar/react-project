@@ -6,7 +6,7 @@
 
 .mainContainer {
     position: relative;
-    top: 5em
+    top: 3em
 }
 
 .searchRelatedContainer {
@@ -22,3 +22,7 @@
     background-color:  rgba(42, 44, 47, 1.0);
     width:20%;
 }
+
+@media only screen and (max-width: 800px) {
+    
+   }

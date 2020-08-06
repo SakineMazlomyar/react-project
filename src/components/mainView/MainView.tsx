@@ -53,7 +53,7 @@ export default class MainView extends React.Component<Props, State>{
                 return self.indexOf(t) === i;
            }).map((search:string, i:number)=>{
            
-                return <li className="text-danger m-1" key={i}><FontAwesomeIcon icon={faHashtag} className="text-danger"/>{ search}</li>
+                return <li className="text-danger p-1" key={i}><FontAwesomeIcon icon={faHashtag} className="text-danger"/>{ search}</li>
            })
        }
     }

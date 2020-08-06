@@ -19,10 +19,6 @@ export default class Footer extends React.Component<Props, State>{
     }
    
 
-   /*  show:boolean,
-    close:()=>void,
-    title:string,
-    text:string */
     render(){
 
         return (

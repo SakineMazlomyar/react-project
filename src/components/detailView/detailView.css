@@ -30,5 +30,8 @@
         top:1em;
         z-index: 1;
     }
+    .hashtag-bg{
+        font-size: 1em;
+    }
     
   }

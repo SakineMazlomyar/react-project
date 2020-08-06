@@ -34,3 +34,19 @@
 .openCloseFormButtonContainer{
     width:30%
 }
+
+@media only screen and (max-width: 800px) {
+    
+   
+.hashtag-bg {
+    font-size: 1.1em;
+    font-weight: 900;
+    color: #ED1637
+    }
+    .title-b {
+        font-size: 0.6em;
+        color:#B0B3B5
+    }
+
+    
+  }
