@@ -12,8 +12,8 @@
     height:4em;
     width:100%
 }
-/* ipda */
-@media screen and (min-width: 400px) {
+/* mobile */
+@media screen and (min-width: 250px) {
     .imgDetail{
         width:50%;
         height:6em;

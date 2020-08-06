@@ -34,7 +34,7 @@
   
   @media only screen and (max-width: 700px) {
     .containerPaginate {
-      width:50%;
+      width:100%;
       position: relative;
       top:3em;
     }

@@ -29,7 +29,27 @@
   /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
   @media screen and (max-width: 800px) {
     .miniHeaderPargraph {
-        font-size:1.3vw
+        font-size:1.4vw
     
     }
   }
+
+  @media only screen and (min-width: 400px) {
+    .listGroupContainer {
+        width:50%;
+        background-color: rgba(42, 44, 47, 1.0);
+        
+    }
+   
+    .searchRelatedContainer {
+        width:20%;
+        background-color: rgba(42, 44, 47, 1.0);
+    }
+
+    .sortContainer {
+        background-color:  rgba(42, 44, 47, 1.0);
+        width:20%;
+    }
+    
+
+}

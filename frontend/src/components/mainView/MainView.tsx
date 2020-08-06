@@ -69,7 +69,7 @@ export default class MainView extends React.Component<Props, State>{
     render(){
         
         return(
-        <div className="d-flex mainContainer container-fluid justify-content-center  p-4  flex-md-row">
+        <div className="d-flex mainContainer container-fluid justify-content-md-center  p-4  flex-md-row">
             
                 <div className="searchRelatedContainer">
                     
