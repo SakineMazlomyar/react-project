@@ -38,7 +38,7 @@ export function register(user:NewUser) {
                type:Types.REGISTER,
                payload:{username:'', email:'', isLoggedIn:false}
            })
-       }else{
+       } else {
            users.push(user);
            setValueToLocalstoreage('users',users)
            return dispatch({
@@ -65,10 +65,6 @@ export function login(user:UserRegisterd) {
             }
         }
 
-        return false
-        
-
-     
-        
+        return false 
     };
 }
