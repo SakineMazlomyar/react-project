@@ -1,5 +1,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## How To Run:
+Clone the project
+
+you shoud have installed:
+Node 12.18.2
+npm 6.14.5
+react 16.13.1
+npm install  (it will take some time);
+npm start 
+the project will be started at localhost:3000
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -42,9 +57,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-
-Versions
-Node 12.18.2
-npm 6.14.5
-react 16.13.1
