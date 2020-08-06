@@ -109,7 +109,7 @@ class App extends React.Component<Props,State>{
         event.preventDefault();
         let register = this.props.register({email:this.state.email, password:this.state.password, username:this.state.username, isLoggedIn:false});
         
-        register.payload.email === '' && register.payload.username === ''?alert('You Already Have An Account'):alert('Welcome New User');
+        register.payload.email === '' && register.payload.username === ''?alert('You Already Have An Account!'):alert('You Can Start Sign In Now!');
         
         this.setState({openForm:false})
         
