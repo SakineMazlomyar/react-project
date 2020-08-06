@@ -1,5 +1,11 @@
 
+.appContainer {
+  position: relative;
+  background-color:rgba(42, 44, 47, 1.0);
+  height:55em;
 
+  
+}
 .input {
   width:90%;
   background-color:rgba(42, 44, 47, 1.0);

@@ -22,8 +22,8 @@ interface LogedInUser {
 }
 
 interface State{
-    signIn:boolean,
-    signInForm: boolean,
+   openForm:boolean,
+    toggleSignSingUP: boolean,
     username:string,
     email:string,
     password:string,
@@ -37,8 +37,8 @@ interface State{
 
 }    
 interface Props {
-    register:(user:NewUser)=>void,
-    login:(user:UserRegisterd)=>{type:string, payload:{email:string, username:string}},
+    register:(user:NewUser)=>{type:string, payload:{email:string, username:string, isLoggedIn:boolean}},
+    login:(user:UserRegisterd)=>{type:string, payload:{email:string, username:string, isLoggedIn:boolean}},
     SEARCH:(text:string)=>any,
     getDefaultData:()=>any
 }
@@ -46,8 +46,8 @@ class App extends React.Component<Props,State>{
     constructor(props:Props){
         super(props);
         this.state = {
-            signIn:false,
-            signInForm: false,
+           openForm:false,
+            toggleSignSingUP: false,
             username:'',
             email:'',
             password:'',
@@ -63,8 +63,8 @@ class App extends React.Component<Props,State>{
 
     }
    
-    signInSignOut = () => {
-        this.setState({signIn:!this.state.signIn})
+    toggleOpenForm = () => {
+        this.setState({openForm:!this.state.openForm})
     }
 
 
@@ -90,38 +90,42 @@ class App extends React.Component<Props,State>{
 
     handleSubmitLogin = (event: React.FormEvent<HTMLFormElement>) => {
         let userLogedIn = this.props.login({email:this.state.email, password:this.state.password});
-        console.log(userLogedIn)
+       
 
         userLogedIn && userLogedIn.payload?
         this.setState({ 
-            loggedInUser:{username:userLogedIn.payload.username, email:userLogedIn.payload.email,  isLoggedIn:true },
-            signIn:false
-        }):alert('Try Later');
+            loggedInUser:{username:userLogedIn.payload.username, email:userLogedIn.payload.email,  isLoggedIn:userLogedIn.payload.isLoggedIn },
+           openForm:false
+        }):alert('Wrong Info or Please Register First');
         event.preventDefault();
         
     }
 
     handleLogOutLogin = () => {
+      
         this.setState({loggedInUser:{username:'', email:'', isLoggedIn:false}})
     }
     handleSubmitRegister = (event: React.FormEvent<HTMLFormElement>) => {
-     
-        this.props.register({email:this.state.email, password:this.state.password, username:this.state.username})
-    
-        alert('Welcome New User');
         event.preventDefault();
+        let register = this.props.register({email:this.state.email, password:this.state.password, username:this.state.username, isLoggedIn:false});
+        
+        register.payload.email === '' && register.payload.username === ''?alert('You Already Have An Account'):alert('Welcome New User');
+        
+        this.setState({openForm:false})
+        
+       
     }
 
 
     toggleTitleSignInSignUp = () => {
-        this.setState({signInForm:!this.state.signInForm})
-    }
+        this.setState({toggleSignSingUP:!this.state.toggleSignSingUP})
+    }   
     renderSingInSignUp = () => {
-        if(this.state.signIn){
+        if(this.state.openForm){
             return <div className="form-content p-2">
-            <button  type="button" className="btn btn-primary mb-4" onClick={this.toggleTitleSignInSignUp}> <span>{!this.state.signInForm ?"Sign In":"Sign Up"}</span></button>
-                { this.state.signInForm? 
-                    <Form fields={[
+            <button  type="button" className="btn btn-secondary mb-4" onClick={this.toggleTitleSignInSignUp}> <span>{!this.state.toggleSignSingUP ?"Toggle Sign In":"Toggle Sign Up"}</span></button>
+                { this.state.toggleSignSingUP? 
+                    <Form fields={[     
                         { label:"Username", type:"text", value:"", name:"username", placeholder:"username"},
                         {label:"Email", type:"email", value:"",  name:"email", placeholder:"email"},
                         {label:"Password", type:"password", name:"password", value:"",  placeholder:"password"}
@@ -131,24 +135,24 @@ class App extends React.Component<Props,State>{
                         {label:"Email", type:"email", name:"email", value:"",  placeholder:"email"},
                         {label:"Password", type:"password", name:"password", value:"",  placeholder:"password"}
                 ]} onSubmit={this.handleSubmitLogin} onChange={this.onChange}/>}
-                    
+              
                 </div>
         }
     }
 
     getSeachText = (text:string) => {
+
     let response = this.props.SEARCH(text);
 
         response.then((suggestions:any)=>{
             let c:string[] = []
             c.unshift('All Cities')
             suggestions.payload.map((obj:any)=> {
-                if(obj.workplace_address.municipality !== "" &&obj.workplace_address.municipality !== null ){
+                if(obj.workplace_address.municipality !== "" && obj.workplace_address.municipality !== null ){
                     c.push(obj.workplace_address.municipality)
                 }
             })
             
-            console.log(suggestions, 'hhh')
             this.setState({suggestions:suggestions.payload, cities:c},()=>{
 
                 let searches:any =  getValueFromLocalstoreage('searches');
@@ -161,9 +165,11 @@ class App extends React.Component<Props,State>{
 
                 }
             })
-    });
-    }
+           
+        });
 
+    }
+     
     componentDidMount(){ this.getDefaultData()}
 
     getDefaultData = () =>{
@@ -184,45 +190,44 @@ class App extends React.Component<Props,State>{
         
         );
     }
-    handlePaginate = (num: number)=>{
-        console.log(num)
-        this.setState({currentPage:num}) }
+    handlePaginate = (num: number)=> { this.setState({currentPage:num}) };
 
-    getCity = (city:string)=> { this.setState({choosenCity:city},()=>{this.sortSuggestions()})}
+    getCity = (city:string)=> { this.setState({choosenCity:city},()=>{this.sortSuggestions()})};
 
     sortSuggestions = () => {
         if(this.state.suggestions && this.state.suggestions.length > 0 ) {
-            let origin = this.state.suggestions
+        
             let sorted:any = []
          
             this.state.suggestions.map((item:any) => {
                 
                 
                 if(item.workplace_address.municipality === this.state.choosenCity){
-                    console.log(item.workplace_address.municipality , this.state.choosenCity)
+                   
                     sorted.push(item)
                 }
             });
             this.setState({sorted:sorted})
         }
     }
-
+         
 
     render(){
-        console.log(this.state.suggestions)
-        let finalData = this.state.sorted.length>0?this.state.sorted:this.state.suggestions;
+       
+        let finalData = this.state.sorted.length> 0?this.state.sorted:this.state.suggestions;
         let indexOfLastSuggest = this.state.currentPage * this.state.suggestionParPage;
         let indexOfFirstSuggest = indexOfLastSuggest - this.state.suggestionParPage;
         let currentSuggestions = finalData.slice(indexOfFirstSuggest, indexOfLastSuggest)
       
-     
+    
          
         return( 
-            <div>    
-               <Navbar signInSignOut={this.signInSignOut} 
-                        signIn={this.state.signIn} 
-                        username={this.state.loggedInUser.isLoggedIn?this.state.loggedInUser.username:''}
-                        handleLogOutLogin={this.handleLogOutLogin}
+            <div className="appContainer"> 
+               
+               <Navbar toggleOpenForm={this.toggleOpenForm} 
+                openForm={this.state.openForm} 
+                username={this.state.loggedInUser.isLoggedIn?this.state.loggedInUser.username:''}
+                handleLogOutLogin={this.handleLogOutLogin}
                         />  
                 {this.renderSingInSignUp()}
                 <Header  getSeachText={this.getSeachText}/>
@@ -240,9 +245,8 @@ class App extends React.Component<Props,State>{
             
                 currentPage = {this.state.currentPage}
                 />
-                
                 <Footer/>
-                
+
             </div>
         )
     }

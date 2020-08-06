@@ -32,7 +32,7 @@ export default class MainView extends React.Component<Props, State>{
 
             return  sortedOrOrigin.map((item:any)=>{
                
-                return <DetailView 
+                return <DetailView  key={Math.floor(Math.random()*1000)}
                 logo_url={item.logo_url} 
                 description={item.description.text} 
                 headline={item.occupation.label}
@@ -69,11 +69,11 @@ export default class MainView extends React.Component<Props, State>{
     render(){
         
         return(
-        <div className="d-flex mainContainer container-fluid justify-content-center p-4 flex-sm-column flex-md-row">
+        <div className="d-flex mainContainer container-fluid justify-content-center  p-4  flex-md-row">
             
                 <div className="searchRelatedContainer">
                     
-                  <p className="text-secondary text-center">SEARCHED RELATED</p>
+                  <p className="text-secondary text-center">RELATED SEARCHES</p>
                     <ul className="itemContainer d-flex flex-column justify-content-center align-items-center" >
                         {this.renderSearchRelatedTerms()}
                     </ul>

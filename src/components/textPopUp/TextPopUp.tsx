@@ -12,7 +12,7 @@ export default class TextPopUp extends React.Component<Props, {}>{
  
     renderText = () => {
         if(this.props.show){
-        return <div className="termsPrivecyContainer container-fluid border p-0 m-0">
+        return <div className="container-fluid border p-0 m-0">
                   <FontAwesomeIcon  className="iconSize" icon={faWindowClose} onClick={this.props.close}/>
               
                 <p className="text-light text-center text-justify">

@@ -37,22 +37,22 @@ export default class Header extends React.Component<Props, State>{
     render(){
         return(   
 
-          <div className="container headerContainer d-flex justify-content-center"> 
+          <div className="headerContainer d-flex flex-md-row flex-sm-row justify-content-md-center align-items-center justify-content-sm-end"> 
         
-                <div>     
-                    <FontAwesomeIcon className="circleSize" icon={faCircle} />
-                    <span className="brandTitle">SKILLDAR</span>
+                <div className="p-1">     
+                    <FontAwesomeIcon className="text-danger font-weight-bold circleSize m-1"  icon={faCircle} />
+                    <span className=" font-weight-bold brandTitle ">SKILLDAR</span>
                 </div>
-                <div className="formSeachWidth ml-3">
-                    <form className="formContainer" onSubmit={this.handleSubmit}>
-                            <input className="input " type="search" placeholder="Search" aria-label="Search" onChange={this.handleOnChange}/>
+
+                <div className="p-1 formContainer">  
+                    <form onSubmit={this.handleSubmit} className="d-flex flex-md-row flex-sm-row justify-content-md-center justify-content-sm-end ">
+                            <input  className="text-secondary input" type="search" placeholder="Search" aria-label="Search" onChange={this.handleOnChange}/>
                             <button className="btn " type="submit">
-                            <FontAwesomeIcon icon={faSearch}  />
+                            <FontAwesomeIcon className="text-secondary" icon={faSearch}  />
                             </button>
                     </form>
-
                 </div>
-
+         
           </div>
         )
     }

@@ -11,20 +11,22 @@
 
 
 .form-content
-{
-    position: relative;
-    top:3em;
-    width:50%;
+{   position: relative;
+    top:2em;
+    width:60%;
     display: block;
- 
-    border: 1px solid #ced4da;
     margin: auto;
+    color:white;
+    background-color:rgba(60, 61, 64,1.0); 
+    border: solid #000;
+    border-width: 2px;
+    border-color: #333437;
+    padding: 6px;
 }
-.form-control{
-    border-radius:1.5rem;
-}
-.btnSubmit
-{
-    width: 45%;
-    border-radius:1.5rem;
-}
+
+@media only screen and (max-width: 600px) {
+    .form-content,.form-c {
+        display: flex;
+        flex-direction: column;
+    }
+  }

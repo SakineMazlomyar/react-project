@@ -19,9 +19,26 @@
 }
 
 .footerMainContainer {
-    position: relative;
+    position: fixed;
+    bottom:0;
+    width:100%;
+    height:3em;
+    background-color:rgba(42, 44, 47, 1.0);;
 }
 
 .iconSize {
     font-size: 1.4;
 }
+
+
+@media only screen and (max-width: 1000px) {
+    .footerMainContainer {
+        position: fixed;
+        bottom:0;
+        height: 1.5em;
+        width:100%;
+        background-color:rgba(42, 44, 47, 1.0);;
+    }
+   
+    
+  }

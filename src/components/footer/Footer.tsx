@@ -38,7 +38,7 @@ export default class Footer extends React.Component<Props, State>{
                                 text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"}
                                  />
                 
-                <div className="page-footer  footerContainer   mb-0 border">
+                <div className="page-footer    mb-0 border">
                    
                         
                     <div className="float-left align-items-center d-flex  flex-row flex-justify-content-center">

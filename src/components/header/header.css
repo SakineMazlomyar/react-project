@@ -4,41 +4,50 @@
     top: 4.5em;
 }
 
+
+@media only screen and (max-width: 600px) {
+    .headerContainer {
+        display: flex;
+        flex-direction: column;
+    }
+   
+    
+}
+
+.circleSize {
+    font-size: 1.6em !important;
+    
+
+}
+
 .branContainer {
     width:30%
 }
 
-.formSeachWidth {
-    width:50%
-}
-.circleSize {
-    font-size: 1.5em;
-    font-weight: 900;
-    color: #ED1637;
-    margin-right: 0.3em;
-}
-
 .brandTitle {
-
-    
-   
     /* can be shortened to */
     font-family: Georgia, serif, sans-serif;;
-    font-weight: bolder;
     font-variant-caps: titling-caps;
     text-decoration: line-through solid rgba(42, 44, 47, 1.0);
-    color: #B0B3B5;
-    font-size: 2em;;
+    font-size: 2em;
+    color:#9199a0 ;
     -ms-transform       : rotate(0deg); /* IE 9 */
     -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
     transform           : rotate(0deg);
 }
 
 
+.formSeachWidth {
+    width:50%
+}
+
+
+
+
 .formContainer {
-  
+    width:40%;
     color:white;
-    background-color:rgba(42, 44, 47, 1.0);
+    background-color:rgba(60, 61, 64,1.0); 
     border: solid #000;
     border-width: 2px;
     border-color: #333437;
@@ -48,8 +57,8 @@
 
   .input {
     color: white;
-    font-weight: bold;
-    background-color:rgba(42, 44, 47, 1.0);
+    font-size: 1.2;
+    background-color:rgba(60, 61, 64, 1.0);
     border-width:0;
   
   }
@@ -60,4 +69,11 @@
     color: white;
     font-weight: bold;
   }
-  
+
+  @media only screen and (max-width: 1000px) {
+    .btnSeach{
+        margin-left: 5em;
+    }
+   
+    
+  }

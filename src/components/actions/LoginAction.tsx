@@ -1,5 +1,5 @@
 import { Types} from './Types';
-
+import {setValueToLocalstoreage, getValueFromLocalstoreage} from '../helps/Helps';
 
 
 export interface UserRegisterd {
@@ -10,31 +10,57 @@ export interface UserRegisterd {
 export interface NewUser {
     username:string,
     email:string,
-    password:string
+    password:string,
+    isLoggedIn:boolean
 }
-let users:any = []
+
+
+
+let usersParsed = getValueFromLocalstoreage('users');
+if(usersParsed === null){
+    setValueToLocalstoreage('users',[])
+}
 export function register(user:NewUser) {
     return function(dispatch: any) {
       
-        users.push(user)
-        
+       
+        let userExist = false
 
-        return dispatch({
+        let users = getValueFromLocalstoreage('users');
+        for(let n of users) {
+            if(n.email === user.email && n.username === user.username){
+                userExist = true
+            }
+        }
+       if(userExist){
+
+           return dispatch({
+               type:Types.REGISTER,
+               payload:{username:'', email:'', isLoggedIn:false}
+           })
+       }else{
+           users.push(user);
+           setValueToLocalstoreage('users',users)
+           return dispatch({
             type:Types.REGISTER,
-            payload:users
+            payload:{username:user.username, email:user.email, isLoggedIn:false}
         })
+       }
+
+        
         
     };
 }
 
 export function login(user:UserRegisterd) {
     return function(dispatch: any) {
-     
-        for(let participate of users){
+        let registeredUsers = getValueFromLocalstoreage('users');
+
+        for(let participate of registeredUsers){
             if(participate.email === user.email &&  participate.password ===  user.password ){
                 return dispatch({
                     type:Types.LOGIN,
-                    payload:{username:participate.username, email:participate.email}
+                    payload:{username:participate.username, email:participate.email, isLoggedIn:true}
                 })
             }
         }

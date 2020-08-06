@@ -7,13 +7,28 @@
   
 }
 
-img{
-    width:70%;
-    height:5em
-}
 
 
 .titleLocation {
-    height:5em;
+    height:4em;
     width:100%
 }
+@media screen and (max-width: 1000px) {
+    .imgDetail{
+        width:60%;
+        height:5em;
+    
+      
+    }
+  }
+ 
+  @media screen and (min-width: 1000px) {
+    .imgDetail{
+        width:60%;
+        height:8em;
+        position: absolute;
+        top:1em;
+        z-index: 1;
+    }
+    
+  }

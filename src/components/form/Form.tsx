@@ -1,6 +1,6 @@
 import React from 'react';
-import './form.css';
 
+  
 
 interface Field  {label:string, type:string, value:string, placeholder:string, name:string};
 interface Props {
@@ -14,24 +14,25 @@ export default class Form extends React.Component<Props, {}>{
     
     renderInputs = () => {   
         return this.props.fields.map((field:Field)=>{
-            return <div className="col-md-8">
-                        <div className="form-group">
-                            <input 
-                            type={field.type} className="form-control" 
-                            placeholder={field.placeholder} 
-                            name={field.name}
-                            onChange={this.props.onChange}
-                            />
-                        </div>
-                    </div>
+            return <input  className="bg-dark text-light"
+                    type={field.type}
+                    placeholder={field.placeholder} 
+                    name={field.name}
+                    onChange={this.props.onChange}
+                    required
+                       
+                    />
+                        
         })
     }
 
 
     render() {
-        return (<form onSubmit={this.props.onSubmit} >
-                    {this.renderInputs()}
-                    <input type="submit" className="btn btn-primary text-light rounded btnSubmit " value="Submit" />
+        return (<form onSubmit={this.props.onSubmit} 
+        className="d-flex flex-md-row flex-lg-row flex-sm-column justify-content-center align-items-center form-c">
+                        {this.renderInputs()}
+
+                        <input type="submit" className="btn btn-secondary text-light m-1" value="Submit" />
                 </form>
          
         )
