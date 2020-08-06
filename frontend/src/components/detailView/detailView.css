@@ -8,24 +8,42 @@
 }
 
 
-
 .titleLocation {
     height:4em;
     width:100%
 }
-@media screen and (max-width: 1000px) {
+/* ipda */
+@media screen and (min-width: 400px) {
+    .imgDetail{
+        width:50%;
+        height:6em;
+    
+      
+    }
+    .hashtag-bg{
+        font-size: 1em;
+    }
+   
+  }
+
+
+
+
+/* ipda */
+@media screen and (min-width: 700px) {
     .imgDetail{
         width:60%;
-        height:5em;
+        height:6em;
     
       
     }
   }
  
+  /* pc */
   @media screen and (min-width: 1000px) {
     .imgDetail{
         width:60%;
-        height:8em;
+        height:6em;
         position: absolute;
         top:1em;
         z-index: 1;

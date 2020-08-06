@@ -246,7 +246,7 @@ class App extends React.Component<Props,State>{
                 currentPage = {this.state.currentPage}
                 />
                 <Footer/>
-
+                
             </div>
         )
     }

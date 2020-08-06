@@ -37,7 +37,7 @@ export default class Header extends React.Component<Props, State>{
     render(){
         return(   
 
-          <div className="headerContainer d-flex flex-md-row flex-sm-row justify-content-md-center align-items-center justify-content-sm-end"> 
+          <div className="headerContainer d-flex flex-md-row flex-sm-row justify-content-md-center align-items-center justify-content-sm-center"> 
         
                 <div className="p-1">     
                     <FontAwesomeIcon className="text-danger font-weight-bold circleSize m-1"  icon={faCircle} />

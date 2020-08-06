@@ -32,7 +32,7 @@ export default class DetailView extends React.Component<Props,{}>{
 
 
             </div>
-            <div className="align-items-center d-flex  flex-row justify-content-around titleLocation">
+            <div className="align-items-center d-flex  flex-row justify-content-md-around titleLocation">
                 <div className="ml-1">
                     <FontAwesomeIcon icon={faHashtag} className="hashtag-bg"/>
                     <span className="font-weight-bold">   {this.props.headline}</span>
