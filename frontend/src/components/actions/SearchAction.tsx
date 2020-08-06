@@ -3,14 +3,14 @@ import axios from 'axios';
 
 export function SEARCH(input:string) {
     return async function (dispatch: any) {
-      
+
         let response = await axios.get(`https://jobsearch.api.jobtechdev.se/search?q=${input}`, {
             headers:  {
                 'Content-Type': 'application/json',
                 'api-key':process.env.REACT_APP_API_KEY
               }})
 
-        
+           
 
         if(response.status === 200 && response.data.hits  )  {
             let relResponse= await response.data.hits

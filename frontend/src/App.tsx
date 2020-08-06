@@ -183,7 +183,7 @@ class App extends React.Component<Props,State>{
                 }
 
             })
-         
+           
             this.setState({suggestions:data.payload, cities:c})
         }
         
