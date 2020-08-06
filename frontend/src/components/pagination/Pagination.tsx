@@ -45,7 +45,7 @@ export default class Pagination extends React.Component<Props,State>{
                  <nav>  
                     <ul className="d-flex pageItems align-items-center pr-1">
                         {this.renderPageNumbers() }
-                        <FontAwesomeIcon icon={faAngleRight} className="text-secondary pageIco font-weight-bold ml-2"/>
+                        <FontAwesomeIcon icon={faAngleRight} className="text-secondary pageIco font-weight-bold ml-2 mt-2"/>
                     </ul>
                 </nav>
             </div>

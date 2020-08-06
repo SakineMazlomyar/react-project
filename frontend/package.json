@@ -33,7 +33,6 @@
     "redux-thunk": "^2.3.0",
     "typescript": "~3.7.2"
   },
-  "proxy": "http://localhost:3000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

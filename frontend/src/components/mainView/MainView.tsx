@@ -32,7 +32,7 @@ export default class MainView extends React.Component<Props, State>{
 
             return  sortedOrOrigin.map((item:any)=>{
                
-                return <DetailView  key={Math.floor(Math.random()*1000)}
+                return <DetailView  key={Math.floor(Math.random()*10000)}
                 logo_url={item.logo_url} 
                 description={item.description.text} 
                 headline={item.occupation.label}

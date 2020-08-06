@@ -24,7 +24,7 @@ export default class DetailView extends React.Component<Props,{}>{
             <div className="col-md-10 bg-dark m-0 p-0  d-flex  flex-row justify-content-center align-items-center">
                 <div>
                     <span className="font-weight-bold">Lorem ipsum dolor sit amet</span>
-                    <p className="text-light text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    <p className="text-light text-left ac-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                     tempor. I’ve worked with many professional film teams.</p>
 
                 </div>
