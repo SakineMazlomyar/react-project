@@ -4,12 +4,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Clone the project
 
 you shoud have installed:
-Node 12.18.2
-npm 6.14.5
-react 16.13.1
-npm install  (it will take some time);
-npm start 
-the project will be started at localhost:3000
+### Node 12.18.2
+### npm 6.14.5
+### react 16.13.1
+### npm install  (it will take some time);
+### npm start 
+### the project will be started at localhost:3000
+![result.png](result.png)
 
 
 
