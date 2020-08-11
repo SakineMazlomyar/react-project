@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+***JobApp***
+---
+What does this project does?
+***this project is for searching job, filtering and having a local info about your related past searches
 ---
 
 
@@ -18,8 +21,11 @@ cd frontend
 
 --- 
 ***To Run Backend *** 
-### backend is only for serving the built app in production
-### npm install 
+### backend is only for serving the built app in the production
+### npm install i the root
+### cd frontend npm install 
+### npm run built
+### cd ..  go back to the root 
 node index.js
 localhost:5000
 --- 
