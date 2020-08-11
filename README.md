@@ -1,6 +1,6 @@
 ***JobApp***
 ---
-***What does this project?*** 
+### ***What does this project?*** 
 ***This project is for searching job, filtering and having a local info about your related past searches***
 ---
 
