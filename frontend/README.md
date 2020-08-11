@@ -10,6 +10,7 @@ you shoud have:
 #### access to .env file inside frontend folder which includes api-key
 ---
 ***To Run frontend ***
+---
 cd frontend 
 ### npm install  (it will take some time);
 ### npm start 
