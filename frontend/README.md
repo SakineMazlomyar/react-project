@@ -9,7 +9,7 @@ you shoud have:
 #### react 16.13.1
 #### access to .env file inside frontend folder which includes api-key
 ---
-***To Run frontend ***
+***To Run frontend
 ---
 cd frontend 
 ### npm install  (it will take some time);
