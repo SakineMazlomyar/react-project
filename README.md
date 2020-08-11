@@ -12,7 +12,7 @@
 ### npm install in the root
 ### cd frontend npm install 
 *** npm install will take time *** 
-### make sure you have ### .env file inside frontend folder### which includes the api key
+### make sure you have .env file inside frontend folder which includes the api key
 ### npm run build
 ### go back to root cd ..  and node index.js
 ### go to localhost:5000
