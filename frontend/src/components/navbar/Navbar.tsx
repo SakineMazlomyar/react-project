@@ -8,8 +8,7 @@ import './navbar.css';
 interface Props {
     toggleOpenForm:()=>void,
     openForm: boolean,
-    username:string,
-    handleLogOutLogin:()=>void
+  
 }
 
 interface State {
@@ -23,7 +22,7 @@ export default class Navbar extends React.Component<Props, State>{
         return(
             <nav className="navbar fixed-top navbar-bg navbar-expand-sm">
                 <a className="navbar-brand">
-                    <FontAwesomeIcon icon={faHashtag} className="hashtag-bg"/>
+                    <FontAwesomeIcon icon={faHashtag} className="hashtag-bg-nav"/>
                     <span className=" ml-2 title-b font-weight-bold">Browse Skills</span>
                 </a>
                 <button className="navbar-toggler" data-toggle="collapse" data-target="#nav-menu">
@@ -32,20 +31,17 @@ export default class Navbar extends React.Component<Props, State>{
 
                 <div className="collapse navbar-collapse" id="nav-menu">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item"> <a href="!#" className="nav-link ">  <FontAwesomeIcon icon={faInstagram} className="iconSize"/> </a> </li>
-                        <li className="nav-item"> <a href="!#" className="nav-link">    <FontAwesomeIcon icon={faTwitterSquare}  className="iconSize"/> </a> </li>
-                        <li className="nav-item d-flex "> 
+                        <li className="nav-item test"> <a href="!#" className="nav-link pr-0">   <FontAwesomeIcon icon={faInstagram} className="iconSize" /> </a> </li>
+                        <li className="nav-item"> <a href="!#" className="nav-link  ">    <FontAwesomeIcon icon={faTwitterSquare}  className="iconSize"/> </a> </li>
+                        <li className="nav-item d-flex  ml-2"> 
+                       
                     
                             {
-                           this.props.username && this.props.username !== '' ?
-                        <div className="d-flex flex-row justifiy-content-center ">
-                            <FontAwesomeIcon icon={faSignOutAlt}   onClick={this.props.handleLogOutLogin} className="loginLogOut loginLogOutIconSize "/>
-                            <span className="text-white">{`Welcome ${this.props.username}`}</span>
-                        </div>:
+                          
 
                             this.props.openForm?<span className="loginLogOut"onClick={this.props.toggleOpenForm} >close</span>:
                             <div className="d-flex justify-content-center align-items-center">
-                                <span className="text-primary text-center ">Login</span>
+                                <span className="text-center loginLogOut ">Login</span>
                                 <FontAwesomeIcon icon={faSignInAlt}   onClick={this.props.toggleOpenForm} className="loginLogOut loginLogOutIconSize "/>
                             </div>
                     

@@ -53,7 +53,7 @@ export default class MainView extends React.Component<Props, State>{
                 return self.indexOf(t) === i;
            }).map((search:string, i:number)=>{
            
-                return <li className="text-danger p-1" key={i}><FontAwesomeIcon icon={faHashtag} className="text-danger"/>{ search}</li>
+                return <li className="text-item-related p-1" key={i}><FontAwesomeIcon icon={faHashtag} className="text-item-search"/>{ search}</li>
            })
        }
     }
@@ -62,6 +62,7 @@ export default class MainView extends React.Component<Props, State>{
       
 
     handleChange = (event:any) => {
+        console.log(event)
         this.setState({city:event},()=>{ this.props.selectChoosenCity(this.state.city)});
       }
     
@@ -69,11 +70,11 @@ export default class MainView extends React.Component<Props, State>{
     render(){
         
         return(
-        <div className="d-flex mainContainer container-fluid justify-content-md-center  p-4  flex-md-row">
+        <div className="d-flex mainContainer  justify-content-md-around alig-items-center flex-md-row">
             
                 <div className="searchRelatedContainer">
                     
-                  <p className="text-secondary text-center">RELATED SEARCHES</p>
+                  <p className="text-related-color text-center">RELATED SEARCHES</p>
                     <ul className="itemContainer d-flex flex-column justify-content-center align-items-center" >
                         {this.renderSearchRelatedTerms()}
                     </ul>
@@ -86,9 +87,9 @@ export default class MainView extends React.Component<Props, State>{
                 </div>
             
        
-                <div className="sortContainer ">
+                <div className="sortContainer">
                 
-                  <p className="text-secondary text-left">SORT RESULTS</p>
+                  <p className="text-related-color text-left">SORT RESULTS</p>
                     <FormSelect options={this.props.cities} 
                     onChange={this.handleChange} 
                     option={this.state.city}

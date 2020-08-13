@@ -30,25 +30,26 @@ export default class Header extends React.Component<Props, State>{
         this.setState({search:event.target.value})
     }
     handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        this.props.getSeachText(this.state.search)
         event.preventDefault();
+        this.props.getSeachText(this.state.search)
+        this.setState({search:""})
         
     }
     render(){
         return(   
 
-          <div className="headerContainer d-flex flex-md-row flex-sm-row justify-content-md-center align-items-center justify-content-sm-center"> 
+          <div className="headerContainer d-flex flex-md-row  justify-content-center align-items-md-center "> 
         
-                <div className="p-1">     
+                <div className="headerItem">     
                     <FontAwesomeIcon className="text-danger font-weight-bold circleSize m-1"  icon={faCircle} />
-                    <span className=" font-weight-bold brandTitle ">SKILLDAR</span>
+                    <span className="brandTitle ">SKILLDAR</span>
                 </div>
 
-                <div className="p-1 formContainer">  
+                <div className="formContainer">  
                     <form onSubmit={this.handleSubmit} className="d-flex flex-md-row flex-sm-row justify-content-md-center justify-content-sm-end ">
-                            <input  className="text-secondary input" type="search" placeholder="Search" aria-label="Search" onChange={this.handleOnChange}/>
-                            <button className="btn " type="submit">
-                            <FontAwesomeIcon className="text-secondary" icon={faSearch}  />
+                            <input  className="input placeHolerText p-0" type="search" placeholder="Search" value={this.state.search} aria-label="Search" onChange={this.handleOnChange}/>
+                            <button className="btn p-0 border-0" type="submit">
+                            <FontAwesomeIcon className="placeHolerText" icon={faSearch}  />
                             </button>
                     </form>
                 </div>

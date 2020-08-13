@@ -2,14 +2,23 @@
 
 .mainContainer {
     position: relative;
-    top: 3em
+    top: 5em;
 }
 
 .itemContainer{
     list-style-type: none;
     
 }
+.text-related-color{
+    color:#B0B3B5;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+.text-item-related{
+    color:#bd122c;
+    font-size: 0.8em;
 
+}
 
 @media only screen and (max-width: 400px) {
     .mainContainer {

@@ -2,11 +2,13 @@
 .loginLogOut{
     color:#1b74af;
     padding: 0.1em;
+    font-size: 1.2em;
+    font-weight: 600;
   
 }
 
 .loginLogOutIconSize {
-    font-size: 1.6em;
+    font-size: 2em;
 }
 
 
@@ -30,3 +32,30 @@
         flex-direction: column;
     }
   }
+
+
+.formSelecButton{
+    
+    font-size: 1.2em;
+    color:white;
+    margin-right: 0.7em;
+    margin-top: 0.5em;
+    background-color: rgba(42, 44, 47, 1.0);
+}
+
+.formSelectContainer {
+
+    width:63%;
+    height:2.3em;
+    border:2px solid orange;
+ 
+}
+
+.opetionDots {
+    font-size: 0.5em;
+    
+}
+
+.dropDownConainer {
+    margin-top: 4.5em;
+}

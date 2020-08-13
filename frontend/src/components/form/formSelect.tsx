@@ -1,7 +1,7 @@
 import React from 'react';
 import './form.css';
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircle,faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
     options:Array<string>,
@@ -10,26 +10,39 @@ interface Props {
   
    
 }
+
 export default class FormSelect extends React.Component<Props, {}>{
- 
+   
     
     rendeOptions = () => {   
+        
         return this.props.options.map((option:string)=>{
-            return <button  key={option}  className="bg-dark dropdown-item text-light"   onClick={()=> this.props.onChange(option)}>{option}</button>
+            return <button  key={option} id={option}  className=" bg-dark dropdown-item" onClick={()=> this.props.onChange(option)}>
+                 <FontAwesomeIcon  icon={faCircle}   className={this.props.option === option?'text-danger opetionDots':'text-secondary opetionDots'} />
+                 <span className="text-light p-2" >{option}</span> 
+                 </button>
         })
     }
 
     render() {
         return (
-            <div  className="dropdown">
-               <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Location
-            </button>
-            <div className="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+            
+            <div  className="dropdown formSelectContainer dropleft">
+                   
+                        <FontAwesomeIcon  icon={faAngleDown}  className="float-right formSelecButton dropdown-toggle " type="button" id="dropdownMenuButton" 
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
+                    
+                        <span className="text-light float-left p-1">Location</span> 
+
+                  
+            
+            <div className="dropdown-menu bg-dark dropleft mt-4" aria-labelledby="dropdownMenuButton">
                 {this.rendeOptions()}
             </div>
+            
               
           </div>
+          
          
         )
     }

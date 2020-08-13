@@ -1,20 +1,23 @@
 .navbar-bg {
-    height:3em;
+    height:3.4em;
     background-color: #141517;
     border: solid #333437;
     border-width: 2px;
  
 }
 
-.hashtag-bg {
-    font-size: 1.3em;
-    font-weight: 900;
-    color: #ED1637
+.hashtag-bg-nav{
+    font-size: 1.1em;
+    color:#cc1e39;
+    stroke: #cc1e39;
+    stroke-width: 20;
+    
 }
 
+
 .title-b {
-    font-size: 0.9em;
-    color:#B0B3B5
+    font-size: 1em;
+    color:#717475
 }
 
 .iconContainer {
@@ -22,8 +25,11 @@
 }
 
 .iconSize {
-    font-size: 1.3em;
-    color: #B0B3B5
+
+    font-size: 1.6em;
+    color: #717475;
+   
+    
 }
 
 .logInIcon {
@@ -38,14 +44,17 @@
 @media only screen and (max-width: 800px) {
     
    
-.hashtag-bg {
-    font-size: 1.1em;
-    font-weight: 900;
-    color: #ED1637
+.hashtag-bg-nav{
+    font-size: 1em;
+    color:#ED1637;
+    
+    stroke: #ED1637;
+    stroke-width: 23;
+ 
     }
     .title-b {
         font-size: 0.6em;
-        color:#B0B3B5
+        color:#717475;
     }
 
     

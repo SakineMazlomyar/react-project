@@ -24,9 +24,11 @@
 
   .pageLink {
     border:none;
+    color:rgba(42, 44, 47, 1.0);
     background-color: rgba(42, 44, 47, 1.0);
   }
   .pageItem{
+    color:rgba(42, 44, 47, 1.0);
     background-color: rgba(42, 44, 47, 1.0);
   }
 

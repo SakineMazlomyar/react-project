@@ -34,17 +34,17 @@ export default class Footer extends React.Component<Props, State>{
                                 text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"}
                                  />
                 
-                <div className="page-footer    mb-0 border">
+                <div className="page-footer mb-0 border-footer">
                    
                         
                     <div className="float-left align-items-center d-flex  flex-row flex-justify-content-center">
                         
-                        <span className="p-1 text-secondary" onClick={()=>this.setState({showPrivecy:true})}> Terms Privecy</span>
+                        <span className="termsPrivecy" onClick={()=>this.setState({showPrivecy:true})}>Terms Privecy</span>
         
                     </div>
                  
                     <div className="float-right  align-items-center d-flex  flex-row flex-justify-content-center">
-                        <span className="p-1 text-success" onClick={()=>this.setState({showAboutUs:true})}>About Skilldar</span>
+                        <span className="p-3 text-success" onClick={()=>this.setState({showAboutUs:true})}>About Skilldar</span>
                         <a href="/" className="p-1 text-warning">Get started</a>
                     
                     </div>

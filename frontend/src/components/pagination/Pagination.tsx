@@ -25,7 +25,7 @@ export default class Pagination extends React.Component<Props,State>{
                 if(this.props.currentPage !== page) {
                     
                 return <li className="page-item  pageItem" key={page}>
-                            <a href="#" className="page-link bg-dark text-secondary pageLink"  onClick={()=> this.props.paginate(page)}> {page} </a>
+                            <a href="#" className="page-link  text-secondary pageLink"  onClick={()=> this.props.paginate(page)}> {page} </a>
                       
                 </li>
                 }

@@ -1,22 +1,26 @@
 .listGroupItem {
     
-    background-color:rgba(42, 44, 47, 1.0);
+    background-color: rgb(48 51 56);
     border: solid #333437;
     border-width: 2px;
     color: white;
   
 }
 
+.imgAndDescriptionBg{
+    background-color: rgb(54 55 58);
+}
+
 
 .titleLocation {
-    height:4em;
+    height:3em;
     width:100%
 }
 /* mobile */
 @media screen and (min-width: 250px) {
     .imgDetail{
         width:50%;
-        height:6em;
+        height:4em;
     
       
     }
@@ -29,8 +33,8 @@
 
 
 
-/* ipda */
-@media screen and (min-width: 700px) {
+/* ipad */
+@media screen and (min-width: 600px) {
     .imgDetail{
         width:60%;
         height:6em;
@@ -42,8 +46,8 @@
   /* pc */
   @media screen and (min-width: 1000px) {
     .imgDetail{
-        width:60%;
-        height:6em;
+        width:90%;
+        height:7em;
         position: absolute;
         top:1em;
         z-index: 1;
@@ -52,8 +56,20 @@
         font-size: 1em;
     }
     
+    .descriptionContainer{
+    
+        padding-top:1.1em;
+        padding-left:1.5em;
+    }
+    
   }
 
   .ac-text{
+      width:80%;
+      font-size: 0.8em;
       overflow: hidden;
+  }
+
+  .starsWidth{
+      width:10%;
   }
