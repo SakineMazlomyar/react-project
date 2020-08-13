@@ -38,7 +38,7 @@ export default class Header extends React.Component<Props, State>{
     render(){
         return(   
 
-          <div className="headerContainer d-flex flex-md-row  justify-content-center align-items-md-center "> 
+          <div className="headerContainer d-flex flex-md-row  justify-content-center align-items-center "> 
         
                 <div className="headerItem">     
                     <FontAwesomeIcon className="text-danger font-weight-bold circleSize m-1"  icon={faCircle} />
@@ -47,9 +47,13 @@ export default class Header extends React.Component<Props, State>{
 
                 <div className="formContainer">  
                     <form onSubmit={this.handleSubmit} className="d-flex flex-md-row flex-sm-row justify-content-md-center justify-content-sm-end ">
-                            <input  className="input placeHolerText p-0" type="search" placeholder="Search" value={this.state.search} aria-label="Search" onChange={this.handleOnChange}/>
+                            <input 
+                             className="input placeHolerText" 
+                             type="text" placeholder="Search" 
+                             value={this.state.search} aria-label="Search" 
+                             onChange={this.handleOnChange} autoFocus/>
                             <button className="btn p-0 border-0" type="submit">
-                            <FontAwesomeIcon className="placeHolerText" icon={faSearch}  />
+                            <FontAwesomeIcon className="headerIconSearch ml-1" icon={faSearch}  />
                             </button>
                     </form>
                 </div>

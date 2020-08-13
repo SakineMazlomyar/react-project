@@ -1,49 +1,37 @@
-.navbar-bg {
-    height:3.4em;
+.containerNavbar {
     background-color: #141517;
     border: solid #333437;
     border-width: 2px;
  
 }
-
-.hashtag-bg-nav{
+#heightNavbarCollaps {
+    height:15em;
+}
+#heightNavbarNormal {
+    height:3.4em;
+}
+.hashtagNavbar {
     font-size: 1.1em;
     color:#cc1e39;
     stroke: #cc1e39;
-    stroke-width: 20;
-    
+    stroke-width: 20; 
 }
 
 
-.title-b {
+.titleNavbar {
     font-size: 1em;
     color:#717475
 }
 
-.iconContainer {
-    width:10%
-}
 
-.iconSize {
-
+.socialMediaItemNavbar{
     font-size: 1.6em;
-    color: #717475;
-   
-    
+    color: #717475;  
 }
 
-.logInIcon {
-    width: 50%;
-  
-}
-
-.openCloseFormButtonContainer{
-    width:30%
-}
-
-@media only screen and (max-width: 800px) {
-    
-   
+/* mobile */
+@media only screen and (max-width: 600px) {
+      
 .hashtag-bg-nav{
     font-size: 1em;
     color:#ED1637;

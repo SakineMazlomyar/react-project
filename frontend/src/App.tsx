@@ -19,7 +19,8 @@ interface State{
     suggestionParPage:number,
     cities:string[],
     choosenCity:string,
-    sorted: any
+    sorted: any,
+    searches:string[]
 
 }    
 interface Props {
@@ -37,7 +38,8 @@ class App extends React.Component<Props,State>{
             suggestionParPage:3,
             cities:[],
             choosenCity:'',
-            sorted:[]
+            sorted:[],
+            searches:[]
 
         }
 
@@ -66,18 +68,28 @@ class App extends React.Component<Props,State>{
                 if(searches !== null ) {
                     searches.push(text)
                     setValueToLocalstoreage('searches', searches);
-                  
-                }else {
-                    setValueToLocalstoreage('searches', []);
+                    this.setState({searches:searches},()=>{console.log(searches)})
+                    
+        
+                } else {
+                    let iniArray = []
+                    iniArray.push(text)
+                    setValueToLocalstoreage('searches',iniArray);
+                    this.setState({searches:iniArray})
 
                 }
+                
             })
            
         });
 
     }
      
-    componentDidMount(){ this.getDefaultData()}
+    componentDidMount(){ 
+       this.getDefaultData()
+       let searches = getValueFromLocalstoreage('searches');
+       if(searches !== null){ this.setState({searches:searches})}
+    }
 
     getDefaultData = () =>{
         this.props.getDefaultData().then((data:any)=>{
@@ -120,7 +132,7 @@ class App extends React.Component<Props,State>{
          
 
     render(){
-       
+        
         let finalData = this.state.sorted.length> 0?this.state.sorted:this.state.suggestions;
         let indexOfLastSuggest = this.state.currentPage * this.state.suggestionParPage;
         let indexOfFirstSuggest = indexOfLastSuggest - this.state.suggestionParPage;
@@ -129,7 +141,7 @@ class App extends React.Component<Props,State>{
     
          
         return( 
-            <div className="appContainer"> 
+            <div className="appContainer container-fluid p-0 m-0"> 
                
                <Navbar toggleOpenForm={this.toggleOpenForm} 
                 openForm={this.state.openForm} 
@@ -142,6 +154,7 @@ class App extends React.Component<Props,State>{
                 cities={this.state.cities.filter((c,i,self) => 
                 {return self.indexOf(c)=== i})} selectChoosenCity={this.getCity}
                 grouped={this.state.sorted}
+                searches={this.state.searches}
                 />
                 <Pagination 
                 suggestionsParPage={this.state.suggestionParPage}
@@ -150,8 +163,9 @@ class App extends React.Component<Props,State>{
             
                 currentPage = {this.state.currentPage}
                 />
+            
                 <Footer/>
-          <h1>hhhhhhhhhhhhhhhh</h1>
+        
             </div>
         )
     }

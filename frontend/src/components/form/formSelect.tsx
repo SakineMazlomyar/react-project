@@ -27,16 +27,14 @@ export default class FormSelect extends React.Component<Props, {}>{
     render() {
         return (
             
-            <div  className="dropdown formSelectContainer dropleft">
+            <div  className="dropdown formSelectContainer text-center">
                    
-                        <FontAwesomeIcon  icon={faAngleDown}  className="float-right formSelecButton dropdown-toggle " type="button" id="dropdownMenuButton" 
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-                    
-                        <span className="text-light float-left p-1">Location</span> 
-
-                  
+                <FontAwesomeIcon  icon={faAngleDown}  className="float-right formSelecButton dropdown-toggle" type="button" id="dropdownMenuButton" 
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
             
-            <div className="dropdown-menu bg-dark dropleft mt-4" aria-labelledby="dropdownMenuButton">
+                <span className="text-light float-left loction-font">Location</span> 
+
+            <div className="dropdown-menu bg-dark  mt-4 dropDownMenu " aria-labelledby="dropdownMenuButton">
                 {this.rendeOptions()}
             </div>
             

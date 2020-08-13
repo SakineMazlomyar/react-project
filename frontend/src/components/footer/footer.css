@@ -45,7 +45,21 @@
 
 .termsPrivecy {
     padding:0.8em;
-    letter-spacing: 3px;
     color:#aba3a4;
+    font-size: 0.9em;
+    font-weight: 500;
+    font-family: sans-serif;
+    
+}
+.itemFooterOne{
+    
     font-size: 1em;
+    color:	#FF8C00;
+    font-weight: 600;
+}
+
+.itemFooterTwo{
+    
+    font-size: 1.1em;
+    color:#168e31
 }

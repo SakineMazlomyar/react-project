@@ -21,38 +21,19 @@
 
 
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 600px) {
     .miniHeaderPargraph {
-        font-size:0.9vw;
+        font-size:1vw;
        
     
     }
   }
   
   /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 600px) {
     .miniHeaderPargraph {
         font-size:1.3vw
     
     }
   }
 
-  @media only screen and (min-width: 400px) {
-    .listGroupContainer {
-        width:50%;
-        background-color: rgba(42, 44, 47, 1.0);
-        
-    }
-   
-    .searchRelatedContainer {
-        width:20%;
-        background-color: rgba(42, 44, 47, 1.0);
-    }
-
-    .sortContainer {
-        background-color:  rgba(42, 44, 47, 1.0);
-        width:20%;
-    }
-    
-
-}

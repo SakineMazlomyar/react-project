@@ -9,7 +9,8 @@ interface Props {
     data:any,
     cities:string[],
     selectChoosenCity:(city:string)=>void,
-    grouped:any
+    grouped:any,
+    searches:string[]
 }
 
 interface State {
@@ -46,14 +47,17 @@ export default class MainView extends React.Component<Props, State>{
     }
 
     renderSearchRelatedTerms = () =>{
-       let searches = getValueFromLocalstoreage('searches');
+       let searches = this.props.searches
       
-       if(searches && searches.length > 0){
-           return searches.filter((t:string, i:number,self:string[])=>{
+       if(searches && searches.length > 0 ){
+           let items = searches.length <= 10?searches:searches.slice(searches.length-10)
+           return items.reverse().filter((t:string, i:number,self:string[])=>{
                 return self.indexOf(t) === i;
            }).map((search:string, i:number)=>{
-           
-                return <li className="text-item-related p-1" key={i}><FontAwesomeIcon icon={faHashtag} className="text-item-search"/>{ search}</li>
+                if(search !== ""){
+
+                    return <li className="text-item-related p-1" key={i}><FontAwesomeIcon icon={faHashtag} className="text-item-search"/>{ search.toLowerCase()}</li>
+                }
            })
        }
     }
@@ -61,10 +65,7 @@ export default class MainView extends React.Component<Props, State>{
 
       
 
-    handleChange = (event:any) => {
-        console.log(event)
-        this.setState({city:event},()=>{ this.props.selectChoosenCity(this.state.city)});
-      }
+    handleChange = (event:any) => { this.setState({city:event},()=>{ this.props.selectChoosenCity(this.state.city)});}
     
 
     render(){
@@ -75,7 +76,8 @@ export default class MainView extends React.Component<Props, State>{
                 <div className="searchRelatedContainer">
                     
                   <p className="text-related-color text-center">RELATED SEARCHES</p>
-                    <ul className="itemContainer d-flex flex-column justify-content-center align-items-center" >
+                    <ul 
+                    className="itemContainer d-flex  flex-column justify-content-center align-items-center" >
                         {this.renderSearchRelatedTerms()}
                     </ul>
 

@@ -18,40 +18,39 @@ export default class DetailView extends React.Component<Props,{}>{
     render(){
         return(
         <div className="container">
-            <div className="row listGroupItem m-1 mb-4 mt-4"> 
+            <div className="row listGroupItem m-1 mb-4 mt-4 p-0"> 
   
-              <div className="col-md-2 imgAndDescriptionBg m-0 ">
-                  <img className="imgDetail" src={img } alt={this.props.headline}/>
-              
-              </div >         
-              <div className=" col-md-10 imgAndDescriptionBg d-flex  flex-row justify-content-center align-items-center descriptionContainer">
-                  <div> 
+              <div className="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 p-0 m-0 row">
+
+                  <div className="col-2">
+                    <img className="imgDetail" src={img } alt={this.props.headline}/> 
+                  </div>
+                  <div className="col-7"> 
                       <span className="font-weight-bold">LOREM IPSUM SIT AMET</span>
-                      <span className="float-right "> <img className="stars p-3" src={stars }/>       657</span>
                       <p className="text-light text-left ac-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                       tempor. I’ve worked with many professional film teams..</p>
   
                   </div>
-                 
-              </div>
-              <div className="container p-3">
-                  <div className="row">
-                  <div className="col-2"></div>
-                      <div className="col-6 d-flex  flex-row  alig-items-center">
-                         <span className="font-weight-bold"> <FontAwesomeIcon className="hashtag-bg-nav" icon={faHashtag} />   {this.props.headline}</span>
-                      </div>
-                      <div className="col-md-4">
-                      <FontAwesomeIcon icon={faHome} />   
-                      <span>   { this.props.city}, </span>
-                      <span >{this.props.country}</span>
-                      </div>
-  
+                  <div className="col-3 mt-3">
+                    <img className="stars" src={stars }/>  
+                    <span> 657</span>
                   </div>
-               
-  
+              
+              </div>         
+              <div className="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 m-0 p-0 colItemTwo">
+                  <div className="row">
+                        <div className="col-lg-2 col-xl-2 col-md-12 col-sm-12 col-xs-12"></div>
+                        <div className="col-lg-6 col-xl-6 col-md-12 col-sm-12 col-xs-12 d-flex  flex-row  alig-items-center">
+                            <span className="font-weight-bold ml-1"> <FontAwesomeIcon className="hashtag-item-job" icon={faHashtag} />   {this.props.headline}</span>
+                        </div>
+                        <div className="col-lg-4 col-xl-4 col-md-12 cl-sm-12 col-xs-12">
+                            <FontAwesomeIcon icon={faHome} />   
+                            <span>   { this.props.city}, </span>
+                            <span>{this.props.country}</span>
+                        </div>
+                  </div>
               </div>
   
-           
             </div>
           
 

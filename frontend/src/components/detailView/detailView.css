@@ -2,12 +2,17 @@
     
     background-color: rgb(48 51 56);
     border: solid #333437;
-    border-width: 2px;
+    border-width: 1px;
     color: white;
   
 }
 
+.colItemTwo{
+    height:3em;
+    background-color: rgb(42, 45, 49);
+}
 .imgAndDescriptionBg{
+    
     background-color: rgb(54 55 58);
 }
 
@@ -16,38 +21,44 @@
     height:3em;
     width:100%
 }
-/* mobile */
-@media screen and (min-width: 250px) {
-    .imgDetail{
-        width:50%;
-        height:4em;
+.hashtag-item-job {
+    font-size: 1em;
+    color:#ED1637;
     
-      
-    }
-    .hashtag-bg{
-        font-size: 1em;
-    }
-   
-  }
+    stroke: #ED1637;
+    stroke-width: 23;
+}
 
 
-
-
-/* ipad */
-@media screen and (min-width: 600px) {
+/* pc */
+@media screen and (min-width: 800px) {
     .imgDetail{
-        width:60%;
+        width:70%;
         height:6em;
-    
+        position: absolute;
+        top:1em;
+        z-index: 1;
       
     }
   }
  
-  /* pc */
-  @media screen and (min-width: 1000px) {
+
+  @media screen and (max-width: 800px) {
     .imgDetail{
-        width:90%;
-        height:7em;
+        width:80%;
+        height:6em;
+        position: absolute;
+        top:1em;
+        z-index: 1;
+      
+    }
+  }
+  /* mobile */
+  @media screen and (max-width: 600px) {
+    
+    .imgDetail{
+        width:80%;
+        height:5em;
         position: absolute;
         top:1em;
         z-index: 1;

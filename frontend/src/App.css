@@ -1,6 +1,7 @@
 
 .appContainer {
   position: relative;
+  width:100%;
   background-color:rgba(42, 44, 47, 1.0);
   height:55em;
 

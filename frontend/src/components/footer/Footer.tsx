@@ -44,8 +44,8 @@ export default class Footer extends React.Component<Props, State>{
                     </div>
                  
                     <div className="float-right  align-items-center d-flex  flex-row flex-justify-content-center">
-                        <span className="p-3 text-success" onClick={()=>this.setState({showAboutUs:true})}>About Skilldar</span>
-                        <a href="/" className="p-1 text-warning">Get started</a>
+                        <span className="p-3 text-success  itemFooterTwo" onClick={()=>this.setState({showAboutUs:true})}>About Skilldar</span>
+                        <a href="/" className="p-1 mr-2 itemFooterOne">Get started</a>
                     
                     </div>
                     

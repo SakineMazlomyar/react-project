@@ -4,14 +4,6 @@
     top: 4em;
 }
 
-.branContainer {
-    width:30%
-}
-
-
-.formSeachWidth {
-    width:50%
-}
 
   ::-webkit-input-placeholder { /* Edge */
     color:#a1a3a5;
@@ -25,41 +17,28 @@
     font-weight: bold;
   }
   
-  ::placeholder {
-    color:#a1a3a5;
-    font-size: 1.2;
-    font-weight: bold;
-  }
+  
 
   .placeHolerText{
-    font-family: Arial;
-    color:#85878a;
-    font-size: 0.9em;  
-    font-weight: normal;
-  }
-  .input {
   
+    color:white;
+    font-size: 1.1em;  
+    
+  }
+ .headerIconSearch{
+  color:#a1a3a5;
+ }
+  .input {
+
     background-color:rgba(60, 61, 64, 1.0);
     border-width:0;
   
   
   }
-  @media only screen and (max-width: 1000px) {
-    .btnSeach{
-        margin-left: 5em;
-    }
-   
-    
-  }
+ 
 
-  @media only screen and (min-width: 1000px) {
-    .headerItem{
-      margin-right: 2em;
-    }
 
-  }
-  /* 
- font-family: 'Cute Font';font-size: 2.5em;
+/* font-family: 'Cute Font';font-size: 2.5em;
 EXO 2
 Do Hyeon
 Aldrich good
@@ -67,10 +46,11 @@ Changa ok
 Russo One
 */
 
-/* ipad */
+/* ipad, pc*/
   @media only screen and (min-width: 600px) {
     .brandTitle {
-      font-family: 'Russo One';font-size: 2.1em;
+      font-family: 'Russo One';
+      font-size: 2.7em;
       text-decoration: line-through solid rgba(42, 44, 47, 1.0);
       color:#a1a3a5 ;
       font-weight: normal;
@@ -79,7 +59,7 @@ Russo One
 
   }
   .circleSize {
-    font-size: 1.3em !important;
+    font-size: 1.5em !important;
     
 
   }
@@ -91,13 +71,17 @@ Russo One
     border: solid #000;
     border-width: 1px;
     border-color: #333437;
-   padding-top: 10px;
+    padding-top: 10px;
     box-shadow: 2px 2px  #000; 
-  }
+    }
+
+    .headerItem{
+      margin-right: 2em;
+    }
 
     
   }
-
+/* mobile */
   @media only screen and (max-width: 600px) {
     .brandTitle {
       font-family: 'Russon One';
@@ -125,11 +109,10 @@ Russo One
     }
     .headerContainer {
       display: flex;
+      width:100%;
       flex-direction: column;
       justify-content: center;
       align-items: center;
   }
 
-    
-  
   }
