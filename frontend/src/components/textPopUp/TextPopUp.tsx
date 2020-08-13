@@ -13,12 +13,13 @@ export default class TextPopUp extends React.Component<Props, {}>{
     renderText = () => {
         if(this.props.show){
         return <div className="container-fluid border-footer p-0 m-0">
+            
                   <FontAwesomeIcon  className="iconSize" icon={faWindowClose} onClick={this.props.close}/>
-              
-                <p className="text-light text-center text-justify">
-               
-        <span className="font-weight-bold text-light font-italic"> {this.props.title} </span>
-                    {this.props.text}
+
+                    <p className="text-light text-center text-justify">
+                
+                        <span className="font-weight-bold text-light font-italic"> {this.props.title} </span>
+                        {this.props.text}
                     </p> 
 
                 </div>

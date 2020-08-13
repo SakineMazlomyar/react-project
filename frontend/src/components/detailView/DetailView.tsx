@@ -23,11 +23,11 @@ export default class DetailView extends React.Component<Props,{}>{
               <div className="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 p-0 m-0 row">
 
                   <div className="col-2">
-                    <img className="imgDetail" src={img } alt={this.props.headline}/> 
+                    <img className="imgDetail" data-test='detail-view-img' src={img } alt={this.props.headline}/> 
                   </div>
                   <div className="col-7"> 
-                      <span className="font-weight-bold">LOREM IPSUM SIT AMET</span>
-                      <p className="text-light text-left ac-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                      <span className="font-weight-bold" data-test='detail-view-title'>LOREM IPSUM SIT AMET</span>
+                      <p className="text-light text-left ac-text" data-test="detail-view-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                       tempor. I’ve worked with many professional film teams..</p>
   
                   </div>
@@ -45,8 +45,8 @@ export default class DetailView extends React.Component<Props,{}>{
                         </div>
                         <div className="col-lg-4 col-xl-4 col-md-12 cl-sm-12 col-xs-12">
                             <FontAwesomeIcon icon={faHome} />   
-                            <span>   { this.props.city}, </span>
-                            <span>{this.props.country}</span>
+                            <span data-test="detail-view-city">   { this.props.city}, </span>
+                            <span data-test="detail-view-country">{this.props.country}</span>
                         </div>
                   </div>
               </div>
