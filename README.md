@@ -24,7 +24,7 @@ cd frontend
 ### backend is only for serving the built app in the production
 ### npm install in the root
 ### cd frontend npm install 
-### npm run built
+### npm run built in the frontend folder
 ### cd ..  go back to the root 
 ### npm start
 localhost:5000
