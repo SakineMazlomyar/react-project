@@ -26,7 +26,7 @@ cd frontend
 ### cd frontend npm install 
 ### npm run built
 ### cd ..  go back to the root 
-node index.js
+### npm start
 localhost:5000
 --- 
 
