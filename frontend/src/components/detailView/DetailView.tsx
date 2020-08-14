@@ -38,7 +38,7 @@ export default class DetailView extends React.Component<Props,{}>{
               
               </div>         
               <div className="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 m-0 p-0 colItemTwo">
-                  <div className="row">
+                  <div className="row p-1">
                         <div className="col-lg-2 col-xl-2 col-md-12 col-sm-12 col-xs-12"></div>
                         <div className="col-lg-6 col-xl-6 col-md-12 col-sm-12 col-xs-12 d-flex  flex-row  alig-items-center">
                             <span className="font-weight-bold ml-1"> <FontAwesomeIcon className="hashtag-item-job" icon={faHashtag} />   {this.props.headline}</span>

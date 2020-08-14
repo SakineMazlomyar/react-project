@@ -65,7 +65,7 @@ export default class MainView extends React.Component<Props, State>{
 
       
 
-    handleChange = (event:any) => { this.setState({city:event},()=>{ this.props.selectChoosenCity(this.state.city)});}
+    handleChange = (data:string) => { this.setState({city:data},()=>{ this.props.selectChoosenCity(this.state.city)});}
     
 
     render(){
@@ -91,7 +91,7 @@ export default class MainView extends React.Component<Props, State>{
        
                 <div className="sortContainer">
                 
-                  <p className="text-related-color text-left">SORT RESULTS</p>
+                  <p className="text-related-color">SORT RESULTS</p>
                     <FormSelect options={this.props.cities} 
                     onChange={this.handleChange} 
                     option={this.state.city}

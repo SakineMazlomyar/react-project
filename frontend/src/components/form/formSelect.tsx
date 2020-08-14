@@ -5,7 +5,7 @@ import { faCircle,faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
     options:Array<string>,
-    onChange:(event:any)=>void,
+    onChange:(city:string)=>void,
     option:string
   
    
@@ -17,7 +17,7 @@ export default class FormSelect extends React.Component<Props, {}>{
     rendeOptions = () => {   
         
         return this.props.options.map((option:string)=>{
-            return <button  key={option} id={option}  className=" bg-dark dropdown-item" onClick={()=> this.props.onChange(option)}>
+            return <button  key={option} id={option} data-test="testing" className=" bg-dark dropdown-item" onClick={()=> this.props.onChange(option)}>
                  <FontAwesomeIcon  icon={faCircle}   className={this.props.option === option?'text-danger opetionDots':'text-secondary opetionDots'} />
                  <span className="text-light p-2" >{option}</span> 
                  </button>
@@ -27,9 +27,9 @@ export default class FormSelect extends React.Component<Props, {}>{
     render() {
         return (
             
-            <div  className="dropdown formSelectContainer text-center">
+            <div  className="dropdown formSelectContainer text-center" data-test="button-form">
                    
-                <FontAwesomeIcon  icon={faAngleDown}  className="float-right formSelecButton dropdown-toggle" type="button" id="dropdownMenuButton" 
+                <FontAwesomeIcon  icon={faAngleDown}  className="float-right formSelecButton dropdown-toggle"  id="dropdownMenuButton" 
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
             
                 <span className="text-light float-left loction-font">Location</span> 
