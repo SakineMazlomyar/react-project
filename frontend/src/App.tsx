@@ -68,7 +68,7 @@ class App extends React.Component<Props,State>{
                 if(searches !== null ) {
                     searches.push(text)
                     setValueToLocalstoreage('searches', searches);
-                    this.setState({searches:searches},()=>{console.log(searches)})
+                    this.setState({searches:searches})
                     
         
                 } else {
