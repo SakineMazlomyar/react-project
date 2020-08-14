@@ -2,8 +2,9 @@
     
     background-color: rgb(48 51 56);
     border: solid #333437;
-    border-width: 1px;
+    border-width: 2px;
     color: white;
+    box-shadow: 2px 2px   #151517; 
   
 }
 

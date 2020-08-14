@@ -50,7 +50,7 @@ Russo One
   @media only screen and (min-width: 600px) {
     .brandTitle {
       font-family: 'Russo One';
-      font-size: 2.7em;
+      font-size: 2.3em;
       text-decoration: line-through solid rgba(42, 44, 47, 1.0);
       color:#a1a3a5 ;
       font-weight: normal;
@@ -68,7 +68,7 @@ Russo One
     height: 3em;
  
     background-color:rgba(60, 61, 64,1.0); 
-    border: solid #000;
+    border: solid #333437;
     border-width: 1px;
     border-color: #333437;
     padding-top: 10px;

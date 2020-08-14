@@ -163,7 +163,9 @@ class App extends React.Component<Props,State>{
             
                 currentPage = {this.state.currentPage}
                 />
-            
+                    <h1>
+                        
+                    </h1>
                 <Footer/>
         
             </div>

@@ -29,7 +29,7 @@ export default class FormSelect extends React.Component<Props, {}>{
             
             <div  className="dropdown formSelectContainer text-center" data-test="button-form">
                    
-                <FontAwesomeIcon  icon={faAngleDown}  className="float-right formSelecButton dropdown-toggle"  id="dropdownMenuButton" 
+                <FontAwesomeIcon  icon={faAngleDown}  className="float-right formSelecButton dropdown-toggle pb-1"  id="dropdownMenuButton" 
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
             
                 <span className="text-light float-left loction-font">Location</span> 

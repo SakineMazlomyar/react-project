@@ -1,6 +1,6 @@
 .miniHeaderContainer {
     width:50%;
-    height:4.5em;
+    height:4.3em;
     position: relative;
     display: block;
     margin: auto;
@@ -23,7 +23,7 @@
 
 @media screen and (min-width: 600px) {
     .miniHeaderPargraph {
-        font-size:1vw;
+        font-size:0.9vw;
        
     
     }
