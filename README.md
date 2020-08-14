@@ -55,4 +55,4 @@ Ran all test suites.
 ![mobile2.png](mobile2.png)
 ---
 ### the desing for this project based on this picture
-![design.png](result.png)
+![design.png](design.png)
