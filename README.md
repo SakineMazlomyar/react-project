@@ -22,12 +22,25 @@ cd frontend
 --- 
 ***To Run Backend *** 
 ### backend is only for serving the built app in the production
-### npm install i the root
+### npm install in the root
 ### cd frontend npm install 
 ### npm run built
 ### cd ..  go back to the root 
 node index.js
 localhost:5000
+--- 
+
+***To test this project *** 
+### cd frontend
+### npm test in the terminal
+### you will see some text and press letter a to test all files which incules test file
+### react-scripts test will be shown and the result if it is fine will be
+Test Suites: 3 passed, 3 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        78.478s
+Ran all test suites.
+
 --- 
 
 # the url for live  http://159.89.94.168:5000/
