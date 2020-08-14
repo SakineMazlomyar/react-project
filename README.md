@@ -43,6 +43,16 @@ Ran all test suites.
 
 --- 
 
-# the url for live  http://159.89.94.168:5000/
+### live ===>  http://159.89.94.168:5000/
+
+---
+### pc
+![pc.png](pc.png)
+
+---
+### mobile, 
+![mobile.png](mobile.png)
+![mobile2.png](mobile2.png)
+---
 ### the desing for this project based on this picture
-![result.png](result.png)
+![design.png](result.png)
