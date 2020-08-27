@@ -47,12 +47,12 @@ Ran all test suites.
 
 ---
 ### pc
-![pc.png](pc.png)
+![./imgs/pc.png](./imgs/pc.png)
 
 ---
 ### mobile, 
-![mobile.png](mobile.png)
-![mobile2.png](mobile2.png)
+![./imgs/mobile.png](./imgs/mobile.png)
+![./imgs/mobile2.png](./imgs/mobile2.png)
 ---
 ### the desing for this project based on this picture
-![design.png](design.png)
+![./imgs/design.png](./imgs/design.png)
