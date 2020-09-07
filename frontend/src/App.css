@@ -1,24 +1,94 @@
+html, body, #root, #containerDiv{
 
-.appContainer {
-  position: relative;
+  margin: 0;
+  padding: 0;
   width:100%;
+  height:100%;
   background-color:rgba(42, 44, 47, 1.0);
-  height:55em;
+  font-family: 'Poppins', sans-serif;
+  }
 
+.navbar{
+  background-color: #111515;
+  border: solid 1.5px #333437;
+ 
+ 
+ 
+}
+.navbar-hashtag{
+  font-size: 1.2em;
+  color:#d81937;
+  stroke: #d81937;
+  stroke-width: 22; 
+}
+.navbar-brand-name{
+  color: #88888a;
+  font-size: 1.25rem;
+  margin-left: 0.3em;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
+
+.navbar-toggler{
+ 
+  background-color:#d81937;
+  font-size: 1em;
+}
+.navbar-toggler-icon{
+  background-color:#d81937
+}
+
+.socialMediaItemNavbar-instagram{
+  font-size: 1.6em;
+  margin-left: 1em;
+  width: 28%;
   
 }
-.input {
-  width:90%;
-  background-color:rgba(42, 44, 47, 1.0);
-  border-width:0;
-
+.socialMediaItemNavbar-twitter{
+  font-size: 1.6em;
+  margin-right: 0.9rem;
+  width: 28%;
 }
 
-.searchIcon {
-  position: absolute;
-  right:0;
-
-  font-size: 1.3em;
-  color: #B0B3B5;
+.nav-sign-in-out{
+  font-size: 1em;
+  color: #2867a5;
+  padding-left: 0;
+  padding-right: 0;
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+.nav-sign-in-out-icon{
+  font-size: 1.7em;
+  margin-top: 0.5rem;
+  color: #2867a5;
+  padding-left: 0;
+  padding-right: 0;
+}
+.circleIconHeader {
+  font-size: 1.5em;
+  color:#d6233f
 }
 
+.brandTitle{
+  font-family: 'Exo 2';
+  font-size: 3em;
+  font-weight: 300;
+
+  color:grey; 
+   
+}
+
+
+/*  Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
