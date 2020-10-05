@@ -43,8 +43,6 @@ Ran all test suites.
 
 --- 
 
-### live ===>  http://159.89.94.168:5000/
-
 ---
 ### pc
 ![./frontend/public/pc.png](./frontend/public/pc.png)
